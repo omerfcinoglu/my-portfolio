@@ -43,14 +43,14 @@ const Index = () => {
 
       {/* Skills Section */}
       <section className="px-8 py-16">
-        <div className="max-w-4xl">
+        <div className="max-w-7xl">
           <h2 className="text-2xl font-semibold text-foreground mb-8">Core Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {skills.map((skill, index) => (
               <Card key={index} className="border-border hover:border-primary/50 transition-colors">
                 <CardContent className="p-6">
                   <skill.icon className="h-8 w-8 text-primary mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">{skill.name}</h3>
+                  <h2 className="font-semibold text-foreground mb-2">{skill.name}</h2>
                   <p className="text-sm text-muted-foreground">{skill.desc}</p>
                 </CardContent>
               </Card>
