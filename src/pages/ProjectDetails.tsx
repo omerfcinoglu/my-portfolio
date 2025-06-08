@@ -22,7 +22,8 @@ const ProjectDetail: React.FC = () => {
             return (
                 <video
                     src={url}
-                    controls
+                    loop
+                    autoPlay
                     className="w-full h-auto max-h-[500px] object-contain bg-black rounded-md"
                 />
             );
@@ -47,7 +48,6 @@ const ProjectDetail: React.FC = () => {
                     src={url}
                     className="absolute top-0 left-0 w-full h-full rounded-md"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
                     title={`${project.title} Preview`}
                 />
             </div>
@@ -59,6 +59,13 @@ const ProjectDetail: React.FC = () => {
             <div className="max-w-4xl mx-auto space-y-8">
                 {/* Proje Başlığı */}
                 <h1 className="text-3xl font-bold text-foreground mb-1">{project.title}</h1>
+                <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, idx) => (
+                        <Badge key={idx} variant="secondary" className="text-xs">
+                            {tech}
+                        </Badge>
+                    ))}
+                </div>
                 <Button asChild>
                     <a
                         href={project.githubUrl}
@@ -76,46 +83,16 @@ const ProjectDetail: React.FC = () => {
 
                 {/* Geliştirme Notları ve Ek Notlar */}
                 <section className="space-y-6">
-                    <h2 className="text-2xl font-semibold text-foreground">Development Notes</h2>
                     <div className=" p-4 rounded-md">
                         {project.devNotes.split('\n').map((line, idx) =>
                             line.trim() ? (
-                                <p key={idx} className="text-sm text-foreground leading-relaxed mb-2">
+                                <p key={idx + 1} className="text-sm text-foreground leading-relaxed">
                                     {line}
                                 </p>
                             ) : (
-                                <div key={idx} className="h-2" />
+                                <div key={idx + 1} className="h-2" />
                             )
                         )}
-                    </div>
-
-                    {project.extraNotes && (
-                        <>
-                            <h2 className="text-2xl font-semibold text-foreground">Additional Notes</h2>
-                            <div className="p-4 rounded-md">
-                                {project.extraNotes.split('\n').map((line, idx) =>
-                                    line.trim() ? (
-                                        <p key={idx} className="text-sm text-foreground leading-relaxed mb-2">
-                                            {line}
-                                        </p>
-                                    ) : (
-                                        <div key={idx} className="h-2" />
-                                    )
-                                )}
-                            </div>
-                        </>
-                    )}
-                </section>
-
-                {/* Kullanılan Teknolojiler ve GitHub Butonu */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-foreground">Technologies</h2>
-                    <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
-                                {tech}
-                            </Badge>
-                        ))}
                     </div>
                 </section>
             </div>

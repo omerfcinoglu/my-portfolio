@@ -1,4 +1,4 @@
-// src/data/projectsData.ts
+import hexasort_proto_video from '../assets/hexasort-proto.mp4';
 export interface Project {
     title: string;
     description: string;
@@ -15,22 +15,39 @@ export interface Project {
 
 export const projectsData: Project[] = [
     {
-        title: 'E-Commerce Platform',
+        title: 'Maze Solver Visualizer',
         description:
-            'A modern e-commerce solution with real-time inventory management and payment processing.',
-        tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-        // Örnek bir YouTube embed linki (iframe olarak gömülebilir)
-        previewUrl: 'https://www.youtube.com/embed/VIDEO_ID_ECOMMERCE',
+            'A Unity project that visualizes various pathfinding algorithms solving a maze in real-time.',
+        tech: ['Unity', 'C#', 'Threading', 'Pathfinding Algorithms'],
+        previewUrl: 'https://www.youtube.com/embed/dVHP0KlOAsI?si=UE_S1lJ5kEhwAF6T',
         devNotes:
-            '• Kurulum: Node.js (v14+) ve PostgreSQL (v13+) ile geliştirme ortamı kuruldu.\n' +
-            '• Backend: Express + Sequelize ile REST API endpoint’leri yazıldı.\n' +
-            '• Gerçek zamanlı stok takibi için WebSocket (Socket.io) entegre edildi.\n' +
-            '• Ödeme altyapısı: Stripe SDK kullanılarak ödeme entegrasyonu yapıldı.\n' +
-            '• Deployment: AWS EC2 üzerinde Docker container olarak çalışır hale getirildi.',
+            'I developed a Maze Solver in Unity as part of my Systems Programming course. In this project, I aimed to run multiple pathfinding algorithms in parallel on separate threads to reach the solution as quickly as possible.\n',
+        githubUrl: 'https://github.com/omerfcinoglu/unity-maze-solver',
+    },
+    {
+        title: 'Hexasort Playable Ad',
+        description: 'A playable-ads adaptation of the Hexasort puzzle game, built in Cocos Creator as a single-file ad unit.',
+        tech: ['Cocos Creator', 'TypeScript'],
+        previewUrl: hexasort_proto_video, // Assuming this is a local video file or a URL
+        devNotes:
+            'Developed for the playable-ads component of Hexasort as part of my game portfolio.\n ' +
+            'I implemented all game logic, asset loading, and UI within one Cocos Creator scene file,' +
+            'ensuring minimal footprint and fast startup in ad environments.\n',
         extraNotes:
-            '• İleride çoklu dil desteği (i18n) eklenebilir.\n' +
-            '• Performans optimizasyonu için Redis caching planlanıyor.',
-        githubUrl: 'https://github.com/example/ecommerce-platform',
+            'Packaged as a single build file to simplify integration and porting across various web and mobile ad platforms.',
+        githubUrl: 'https://github.com/yourusername/hexasort-playable-ad',
+    },
+    {
+        title: 'Customizable Tic-Tac-Toe (NxN K-in-a-Row)',
+        description:
+            'A vanilla JavaScript Canvas API implementation of Tic-Tac-Toe extended to an N×N grid (N ≥ 3). Players choose the number of consecutive marks (“K-in-a-Row”) required to win, making each game fully configurable.',
+        tech: ['JavaScript', 'Canvas API'],
+        previewUrl: '/path/to/tictactoe-demo.gif',   // or import a local asset as shown above
+        devNotes:
+            '• Built a dynamic N×N board renderer using Canvas.\n' +
+            '• Implemented a “K-in-a-Row” win-condition detector that checks rows, columns, and both diagonals for any user-specified K ≥ 3.\n' +
+            '• Handled user input and board state purely in vanilla JS for maximum portability.',
+        githubUrl: 'https://github.com/yourusername/custom-tictactoe',
     },
     {
         title: 'Task Management App',
