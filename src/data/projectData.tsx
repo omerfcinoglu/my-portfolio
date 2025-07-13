@@ -1,21 +1,19 @@
 import hexasort_proto_video from '../assets/hexasort-proto.mp4';
 export interface Project {
     title: string;
+    category: string;
     description: string;
     tech: string[];
-    // Artık previewUrl eklendi (örneğin YouTube embed linki, gif URL’si veya iframe’le gösterilebilecek adres)
     previewUrl: string;
-    // Geliştirme notları
     devNotes: string;
-    // Eklenecek diğer notlar (isteğe bağlı)
     extraNotes?: string;
-    // GitHub adresi
     githubUrl: string;
 }
 
 export const projectsData: Project[] = [
     {
         title: 'Maze Solver Visualizer',
+        category: 'ai', // AI Development
         description:
             'A Unity project that visualizes various pathfinding algorithms solving a maze in real-time.',
         tech: ['Unity', 'C#', 'Threading', 'Pathfinding Algorithms'],
@@ -26,9 +24,10 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Hexasort Playable Ad',
+        category: 'game', // Game Development
         description: 'A playable-ads adaptation of the Hexasort puzzle game, built in Cocos Creator as a single-file ad unit.',
         tech: ['Cocos Creator', 'TypeScript'],
-        previewUrl: hexasort_proto_video, // Assuming this is a local video file or a URL
+        previewUrl: hexasort_proto_video,
         devNotes:
             'Developed for the playable-ads component of Hexasort as part of my game portfolio.\n ' +
             'I implemented all game logic, asset loading, and UI within one Cocos Creator scene file,' +
@@ -39,10 +38,11 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Customizable Tic-Tac-Toe (NxN K-in-a-Row)',
+        category: 'game', // Game Development
         description:
             'A vanilla JavaScript Canvas API implementation of Tic-Tac-Toe extended to an N×N grid (N ≥ 3). Players choose the number of consecutive marks (“K-in-a-Row”) required to win, making each game fully configurable.',
         tech: ['JavaScript', 'Canvas API'],
-        previewUrl: '/path/to/tictactoe-demo.gif',   // or import a local asset as shown above
+        previewUrl: '/path/to/tictactoe-demo.gif',
         devNotes:
             '• Built a dynamic N×N board renderer using Canvas.\n' +
             '• Implemented a “K-in-a-Row” win-condition detector that checks rows, columns, and both diagonals for any user-specified K ≥ 3.\n' +
@@ -51,6 +51,7 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Task Management App',
+        category: 'web', // Web Development
         description:
             'Collaborative task management tool with real-time updates and team collaboration features.',
         tech: ['TypeScript', 'React', 'Express', 'Socket.io'],
@@ -68,6 +69,7 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Weather Dashboard',
+        category: 'web', // Web Development
         description:
             'Beautiful weather application with location-based forecasts and interactive charts.',
         tech: ['React', 'Chart.js', 'Weather API', 'Tailwind CSS'],
@@ -85,6 +87,7 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Portfolio Website',
+        category: 'web', // Web Development
         description:
             'Minimalist portfolio site showcasing projects with smooth animations and dark mode.',
         tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],

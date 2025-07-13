@@ -8,10 +8,10 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
-import GitHub from "./pages/GitHub";
 import History from "./pages/History";
 import NotFound from "./pages/NotFound";
 import ProjectDetail from "./pages/ProjectDetails";
+import ProjectCategory from "./pages/ProjectCategory";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +27,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:projectId" element={<ProjectDetail />} />
+              <Route path="/projects/category/:categoryKey" element={<ProjectCategory />} />
               <Route path="/cv" element={<History />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
